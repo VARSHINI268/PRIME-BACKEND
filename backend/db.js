@@ -47,7 +47,7 @@ const seedAdminUser = () => {
   const adminUsername = process.env.ADMIN_USERNAME || 'admin';
   const adminPassword = process.env.ADMIN_PASSWORD || 'Admin@123';
 
-  db.get('SELECT * FROM users WHERE role = ?', ['admin'], async (err, row) => {
+  db.get('SELECT * FROM users WHERE email = ?', [adminEmail], async (err, row) => {
     if (err) {
       console.error('Failed to check admin user:', err);
       return;
